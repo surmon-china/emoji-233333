@@ -254,5 +254,6 @@ class Emoji233333 {
   }
 }
 
+// const window = window || {}
 window.Emoji233333 = Emoji233333
 module.exports = Emoji233333
