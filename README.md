@@ -3,6 +3,9 @@
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/stargazers)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/surmon-china/emoji-233333.svg?style=flat-square)](https://twitter.com/intent/tweet?url=https://github.com/surmon-china/emoji-233333)
 
+[![NPM](https://nodei.co/npm/emoji-233333.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/emoji-233333/)
+[![NPM](https://nodei.co/npm-dl/emoji-233333.png?months=9&height=3)](https://nodei.co/npm/emoji-233333/)
+
 # emoji-233333
 
 一个 2333333 插件
