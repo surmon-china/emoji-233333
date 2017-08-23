@@ -1,0 +1,26 @@
+{
+  "name": "emoji-233333",
+  "version": "1.0.0",
+  "description": "233333",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surmon-china/emoji-233333.git"
+  },
+  "keywords": [
+    "233333",
+    "emoji"
+  ],
+  "author": "Surmon",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/surmon-china/emoji-233333/issues"
+  },
+  "homepage": "https://github.com/surmon-china/emoji-233333#readme",
+  "dependencies": {
+    "hidpi-canvas": "^1.0.10"
+  }
+}
