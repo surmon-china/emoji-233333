@@ -1,3 +1,4 @@
+[![](https://badge.juejin.im/entry/599dc6da6fb9a0247b3b5c72/likes.svg?style=flat-square)](https://juejin.im/entry/599dc6da6fb9a0247b3b5c72/detail)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/issues)
 [![GitHub forks](https://img.shields.io/github/forks/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/network)
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/stargazers)
