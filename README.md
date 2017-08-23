@@ -1,3 +1,8 @@
+[![GitHub issues](https://img.shields.io/github/issues/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/issues)
+[![GitHub forks](https://img.shields.io/github/forks/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/network)
+[![GitHub stars](https://img.shields.io/github/stars/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/stargazers)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/surmon-china/emoji-233333.svg?style=flat-square)](https://twitter.com/intent/tweet?url=https://github.com/surmon-china/emoji-233333)
+
 # emoji-233333
 
 一个 2333333 插件
