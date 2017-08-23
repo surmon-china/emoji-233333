@@ -1,6 +1,6 @@
 {
   "name": "emoji-233333",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "233333",
   "main": "dist/233333.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/surmon-china/emoji-233333#readme",
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-es2015": "^6.24.1"
   }
 }

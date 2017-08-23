@@ -1,17 +1,24 @@
 # emoji-233333
-全屏鬼畜
 
-[Demo](https://surmon-china.github.io/emoji-233333/test/index.html)
+一个 2333333 插件
+
+[Online Demo](https://surmon-china.github.io/emoji-233333/test/index.html)
+
+## install
 
 ```bash
 npm i emoji-233333 --save
 ```
 
+
+## use
+
 ```javascript
+const Emoji233333 = require('emoji-233333')
 const emoji233333 = new Emoji233333({
     // 文档：DOM / String
    base: 'emoji',
-   // 显示器分辨率：默认不指定自动分析
+   // 显示器分辨率：默认不需要指定自动分析
    // ratio: 1,
    // 表情缩放程度
    scale: 0.7,
