@@ -2,8 +2,9 @@
   "name": "emoji-233333",
   "version": "1.0.0",
   "description": "233333",
-  "main": "dist/index.js",
+  "main": "dist/233333.js",
   "scripts": {
+    "build": "babel ./src/233333.js --out-file ./dist/233333.js --presets=es2015 --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +21,7 @@
     "url": "https://github.com/surmon-china/emoji-233333/issues"
   },
   "homepage": "https://github.com/surmon-china/emoji-233333#readme",
-  "dependencies": {
-    "hidpi-canvas": "^1.0.10"
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
   }
 }

@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>233333</title>
+    <meta data-n-head="true" charset="utf-8"/>
+    <meta data-n-head="true" http-equiv="cleartype" content="on"/>
+    <meta data-n-head="true" name="author" content="surmon@foxmail.com"/>
+    <meta data-n-head="true" name="MobileOptimized" content="320"/>
+    <meta data-n-head="true" name="HandheldFriendly" content="True"/>
+    <meta data-n-head="true" name="apple-mobile-web-app-capable" content="yes"/>
+    <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>emoji-233333</title>
     <style>
     	body {
     		margin: 0;
@@ -11,43 +18,146 @@
     		z-index: -1;
     		top: 0;
     		left: 0;
-    		width: 100%;
-    		height: 100%;
-    		/*background-color: rgba(238, 238, 238, 0.3);*/
+    		width: 800px;
+    		height: 800px;
     		position: fixed;
     	}
     	.options {
     		width: 100%;
-    		height: 2rem;
-    		margin: 10% auto;
+    		margin: 0 auto;
+        margin-top: 5rem;
     		text-align: center;
     	}
+      .emoji {
+        padding: .5rem;
+        width: 20rem;
+        margin-bottom: 1rem;
+        border: 1px solid #eee;
+      }
+      button {
+        cursor: pointer;
+        border: none;
+        padding: .6rem 2rem;
+        font-size: 1.1rem;
+        margin: 1rem;
+        border-radius: 1px;
+        background-color: #eee;
+      }
+      button:hover {
+        background-color: #aaa;
+      }
     </style>
-    <script type="text/javascript" src="../src/233333.js"></script>
+    <script type="text/javascript" src="../dist/233333.js"></script>
   </head>
   <body>
   	<canvas id="emoji"></canvas>
   	<div class="options">
-  		<button>来一发（canvas）</button>
-  		<button>来一发（css）</button>
-  		<input type="text" placeholder="base图片/url">
-  		<button>换个表情</button>
+      <h4>分辨率</h4>
+      <input id="ratio" 
+             type="range" 
+             min="0.1" 
+             max="2" 
+             step="0.1" 
+             value="1"
+             onchange="onOptionChanged('ratio', this.value)"/>
+      <h4>表情缩放程度</h4>
+      <input id="scale" 
+             type="range" 
+             min="0.1" 
+             max="2" 
+             step="0.1" 
+             value="0.7" 
+             onchange="onOptionChanged('scale', this.value)"/>
+      <h4>动画速度</h4>
+      <input id="speed" 
+             type="range" 
+             min="1" 
+             max="20" 
+             step="1" 
+             value="12"
+             onchange="onOptionChanged('speed', this.value)"/>
+      <h4>动画递增速度</h4>
+      <input id="increaseSpeed" 
+             type="range" 
+             min="0" 
+             max="1" 
+             step="0.01" 
+             value="0.06"
+             onchange="onOptionChanged('increaseSpeed', this.value)"/>
+      <h4>表情密度</h4>
+      <input id="density" 
+             type="range" 
+             min="0.1" 
+             max="1" 
+             step="0.1" 
+             value="0.3"
+             onchange="onOptionChanged('density', this.value)"/>
+      <h4>
+        <span>是否启用交错效果</span>
+        <input id="staggered" 
+               type="checkbox" 
+               name="vehicle" 
+               checked="checked"
+               onchange="onOptionChanged('staggered', this.checked)"/>
+      </h4>
+      <h4>表情图片地址</h4>
+  		<input id="J_emoji"
+             class="emoji" 
+             type="text" 
+             placeholder="base图片: url / base64" 
+             value=""
+             onchange="onOptionChanged('emoji', this.value)">
+      <br>
+      <div class="buttons">
+        <button onclick="updateOptions()">更新配置</button>
+        <button onclick="luanch()">来一发</button>
+      </div>
+      <h4>
+        <a href="https://github.com/surmon-china/emoji-233333">Go to Github</a>
+      </h4>
   	</div>
   </body>
   <script>
-  	const emoji233Canvas = new Emoji233Canvas({
-  		// 文档：DOM / String
-  		base: 'emoji',
-  		// 显示器分辨率：默认不指定自动分析
-  		// ratio: 1,
-  		// 动画速度
-  		speed: 8,
-  		// 表情密度
-  		density: 0.3,
-  		// 是否启用交错效果
-  		staggered: true
-  	})
-  	setTimeout(emoji233Canvas.launch.bind(emoji233Canvas), 0)
-  	console.log(emoji233Canvas)
+    const emoji = document.getElementById('emoji')
+    emoji.width = document.documentElement.clientWidth || document.body.clientWidth
+    emoji.height = document.documentElement.clientHeight || document.body.clientHeight
+    const options = {
+      // 文档：DOM / String
+      base: 'emoji',
+      // 显示器分辨率：默认不指定自动分析
+      // ratio: 1,
+      // 表情缩放程度
+      scale: 0.7,
+      // 动画速度
+      speed: 12,
+      // 递增速度
+      increaseSpeed: 0.06,
+      // 表情密度
+      density: 0.3,
+      // 是否启用交错效果
+      staggered: true
+    }
+  	const emoji233333 = new Emoji233333(options)
+    const luanch = () => {
+      emoji233333.launch()
+    }
+    const updateOptions = () => {
+      const emoji = document.getElementById('J_emoji')
+      if (emoji.value) {
+        options.emoji = emoji.value
+      }
+      console.log('updateOptions', options)
+      emoji233333.update(options)
+    }
+    const onOptionChanged = (key, value) => {
+      if (!['staggered', 'emoji'].includes(key)) {
+        value = Number(value)
+      }
+      options[key] = value
+      console.log('onOptionChanged', key, value, options)
+      updateOptions()
+    }
+  	setTimeout(emoji233333.launch.bind(emoji233333), 0)
+  	console.log(emoji233333)
   </script>
 </html>
