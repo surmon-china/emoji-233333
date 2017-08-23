@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>233333</title>
+    <style>
+    	body {
+    		margin: 0;
+    		padding: 0;
+    	}
+    	canvas {
+    		z-index: -1;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    		/*background-color: rgba(238, 238, 238, 0.3);*/
+    		position: fixed;
+    	}
+    	.options {
+    		width: 100%;
+    		height: 2rem;
+    		margin: 10% auto;
+    		text-align: center;
+    	}
+    </style>
+    <script type="text/javascript" src="../src/233333.js"></script>
+  </head>
+  <body>
+  	<canvas id="emoji"></canvas>
+  	<div class="options">
+  		<button>来一发（canvas）</button>
+  		<button>来一发（css）</button>
+  		<input type="text" placeholder="base图片/url">
+  		<button>换个表情</button>
+  	</div>
+  </body>
+  <script>
+  	const emoji233Canvas = new Emoji233Canvas({
+  		// 文档：DOM / String
+  		base: 'emoji',
+  		// 显示器分辨率：默认不指定自动分析
+  		// ratio: 1,
+  		// 动画速度
+  		speed: 8,
+  		// 表情密度
+  		density: 0.3,
+  		// 是否启用交错效果
+  		staggered: true
+  	})
+  	setTimeout(emoji233Canvas.launch.bind(emoji233Canvas), 0)
+  	console.log(emoji233Canvas)
+  </script>
+</html>
