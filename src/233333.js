@@ -253,3 +253,6 @@ class Emoji233333 {
     return Math.floor(Math.random() * num + 1)
   }
 }
+
+window.Emoji233333 = Emoji233333
+module.exports = Emoji233333
