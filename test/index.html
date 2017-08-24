@@ -102,6 +102,14 @@
                checked="checked"
                onchange="onOptionChanged('staggered', this.checked)"/>
       </h4>
+      <h4>
+        <span>是否启用内置缓冲区</span>
+        <input id="cache" 
+               type="checkbox" 
+               name="cache" 
+               checked="checked"
+               onchange="onOptionChanged('cache', this.checked)"/>
+      </h4>
       <h4>表情图片地址</h4>
   		<input id="J_emoji"
              class="emoji" 
@@ -153,7 +161,9 @@
       // 表情密度
       density: 6,
       // 是否启用交错效果
-      staggered: true
+      staggered: true,
+      // 是否启用缓存
+      cache: true
     }
   	var emoji233333 = new Emoji233333(options)
     function luanch() {
@@ -168,7 +178,7 @@
       emoji233333.update(options)
     }
     function onOptionChanged(key, value) {
-      if (!['staggered', 'emoji'].includes(key)) {
+      if (!['staggered', 'cache', 'emoji'].includes(key)) {
         value = Number(value)
       }
       options[key] = value
