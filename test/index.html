@@ -31,6 +31,8 @@
       .emoji {
         padding: .5rem;
         width: 20rem;
+        height: 1.8rem;
+        line-height: 1.8rem;
         margin-bottom: 1rem;
         border: 1px solid #eee;
       }
@@ -74,23 +76,23 @@
              min="1" 
              max="100" 
              step="1" 
-             value="12"
+             value="14"
              onchange="onOptionChanged('speed', this.value)"/>
       <h4>动画递增速度</h4>
       <input id="increaseSpeed" 
              type="range" 
              min="0" 
-             max="1" 
+             max="3" 
              step="0.01" 
-             value="0.2"
+             value="0.4"
              onchange="onOptionChanged('increaseSpeed', this.value)"/>
       <h4>表情密度</h4>
       <input id="density" 
              type="range" 
-             min="0.1" 
-             max="1" 
-             step="0.1" 
-             value="0.3"
+             min="1" 
+             max="30" 
+             step="1" 
+             value="6"
              onchange="onOptionChanged('density', this.value)"/>
       <h4>
         <span>是否启用交错效果</span>
@@ -145,11 +147,11 @@
       // 表情缩放程度
       scale: 0.7,
       // 动画速度
-      speed: 12,
+      speed: 14,
       // 递增速度
-      increaseSpeed: 0.2,
+      increaseSpeed: 0.4,
       // 表情密度
-      density: 0.3,
+      density: 6,
       // 是否启用交错效果
       staggered: true
     }
