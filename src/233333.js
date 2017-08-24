@@ -141,6 +141,7 @@ class Emoji233333 {
           }
         }
         emoji.y += this._speed
+        /*
         let sizeScope = this._speed / this.canvas.height * this.emojiImg.width
         sizeScope = Math.abs(sizeScope) * emoji.scale
         if (sizeScope > this.emojiImg.width) {
@@ -153,6 +154,7 @@ class Emoji233333 {
           emoji.w -= sizeScope * 0.8
           emoji.h -= sizeScope * 0.8
         }
+        */
         if (this.options.cache) {
           this.cacheCanvasContext.drawImage(
             this.emojiImg,
