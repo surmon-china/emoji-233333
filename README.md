@@ -48,7 +48,10 @@ const emoji233333 = new Emoji233333({
    staggered: true,
    
    // 自定义表情图片地址 url || base64
-   emoji: 'https://xxxxx'
+   emoji: 'https://xxxxx',
+
+   // 是否启用内置缓存机制
+   cache: true
 })
 
 // 发射
