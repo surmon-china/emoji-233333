@@ -72,7 +72,7 @@
       <input id="speed" 
              type="range" 
              min="1" 
-             max="20" 
+             max="100" 
              step="1" 
              value="12"
              onchange="onOptionChanged('speed', this.value)"/>
@@ -82,7 +82,7 @@
              min="0" 
              max="1" 
              step="0.01" 
-             value="0.06"
+             value="0.2"
              onchange="onOptionChanged('increaseSpeed', this.value)"/>
       <h4>表情密度</h4>
       <input id="density" 
@@ -110,6 +110,7 @@
       <br>
       <div class="buttons">
         <button onclick="updateOptions()">更新配置</button>
+        <button onclick="exportOptions()">导出配置</button>
         <button onclick="luanch()">来一发</button>
       </div>
       <h4>
@@ -118,10 +119,25 @@
   	</div>
   </body>
   <script>
-    const emoji = document.getElementById('emoji')
+    // 文件下载
+    function fakeClick(obj) {
+      var ev = document.createEvent("MouseEvents");
+      ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+      obj.dispatchEvent(ev);
+    }
+    function exportRaw(name, data) {
+      var urlObject = window.URL || window.webkitURL || window;
+      var export_blob = new Blob([data]);
+      var save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+      save_link.href = urlObject.createObjectURL(export_blob);
+      save_link.download = name;
+      fakeClick(save_link);
+    }
+    // 初始化
+    var emoji = document.getElementById('emoji')
     emoji.width = document.documentElement.clientWidth || document.body.clientWidth
     emoji.height = document.documentElement.clientHeight || document.body.clientHeight
-    const options = {
+    var options = {
       // 文档：DOM / String
       base: 'emoji',
       // 显示器分辨率：默认不指定自动分析
@@ -131,31 +147,34 @@
       // 动画速度
       speed: 12,
       // 递增速度
-      increaseSpeed: 0.06,
+      increaseSpeed: 0.2,
       // 表情密度
       density: 0.3,
       // 是否启用交错效果
       staggered: true
     }
-  	const emoji233333 = new Emoji233333(options)
-    const luanch = () => {
+  	var emoji233333 = new Emoji233333(options)
+    function luanch() {
       emoji233333.launch()
     }
-    const updateOptions = () => {
-      const emoji = document.getElementById('J_emoji')
+    function updateOptions() {
+      var emoji = document.getElementById('J_emoji')
       if (emoji.value) {
         options.emoji = emoji.value
       }
       console.log('updateOptions', options)
       emoji233333.update(options)
     }
-    const onOptionChanged = (key, value) => {
+    function onOptionChanged(key, value) {
       if (!['staggered', 'emoji'].includes(key)) {
         value = Number(value)
       }
       options[key] = value
       console.log('onOptionChanged', key, value, options)
       updateOptions()
+    }
+    function exportOptions() {
+      exportRaw('options.json', JSON.stringify(options))
     }
   	setTimeout(emoji233333.launch.bind(emoji233333), 0)
   	console.log(emoji233333)
