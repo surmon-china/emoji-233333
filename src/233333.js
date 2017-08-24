@@ -12,7 +12,7 @@ class Emoji233333 {
       base: 'emoji',
       scale: 0.5,
       speed: 10,
-      density: 1,
+      density: 3,
       staggered: true,
       increaseSpeed: 0.08,
       emoji: this.defaultEmoji
@@ -73,7 +73,7 @@ class Emoji233333 {
     }
     this.preImage(options.emoji, emj => {
       const cWidth = parseInt(this.canvas.style.width)
-      const count = parseInt(cWidth / (emj.width * options.scale)) / options.density
+      const count = parseInt(cWidth / (emj.width * options.scale)) * options.density
       for (let i = 0; i < count; i++) {
         let emojiX = (cWidth / count) * i * options.ratio
         const emojiY = -Emoji233333.rand(this.canvas.height)
@@ -97,15 +97,13 @@ class Emoji233333 {
           const fullWidth = this.canvas.width
           const xWidthExtentF = fullWidth / 3
           const xWidthExtentS = xWidthExtentF * 2
-          let random = Math.random()
-          random = random < 0.5 ? 0.9 : random
-          random = random < 0.5 ? random * 2 : random
           if (emojiX < xWidthExtentF) {
-            targetX = emojiX + (fullWidth * 1.5 * random)
+            targetX = emojiX + (fullWidth * 1.2 * Math.random())
           } else if (emojiX > xWidthExtentS) {
-            targetX = emojiX - (xWidthExtentS * 1.5 * random)
+            targetX = emojiX - (xWidthExtentS * 1.2 * Math.random())
           } else {
-            targetX = emojiX * random
+          	let random = Math.random()
+            targetX = random < 0.5 ? xWidthExtentF * random : fullWidth * Math.random()
           }
           newEmoji.targetX = targetX
         }
@@ -124,7 +122,6 @@ class Emoji233333 {
       const emoji = this.emojis[i]
       const targetY = this.canvas.height
       const xSpeed = this._speed * 0.6
-      // console.log('emoji', emoji, 'emoji.y', emoji.y, 'targetY', targetY)
       if (emoji.y < targetY) {
         if (this.options.staggered) {
           if (emoji.x < emoji.targetX) {
