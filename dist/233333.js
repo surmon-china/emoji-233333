@@ -188,18 +188,20 @@
               }
             }
             emoji.y += this._speed;
-            var sizeScope = this._speed / this.canvas.height * this.emojiImg.width;
-            sizeScope = Math.abs(sizeScope) * emoji.scale;
+            /*
+            let sizeScope = this._speed / this.canvas.height * this.emojiImg.width
+            sizeScope = Math.abs(sizeScope) * emoji.scale
             if (sizeScope > this.emojiImg.width) {
-              sizeScope = Math.abs(sizeScope - this.emojiImg.width);
+              sizeScope = Math.abs(sizeScope - this.emojiImg.width)
             }
             if (emoji.w * 1.3 < this.emojiImg.width * emoji.scale) {
-              emoji.w += sizeScope * 2;
-              emoji.h += sizeScope * 2;
+              emoji.w += sizeScope * 2
+              emoji.h += sizeScope * 2
             } else {
-              emoji.w -= sizeScope * 0.8;
-              emoji.h -= sizeScope * 0.8;
+              emoji.w -= sizeScope * 0.8
+              emoji.h -= sizeScope * 0.8
             }
+            */
             if (this.options.cache) {
               this.cacheCanvasContext.drawImage(this.emojiImg, ~~(0.5 + emoji.x), ~~(0.5 + emoji.y), ~~(0.5 + emoji.w * emoji.scale), ~~(0.5 + emoji.h * emoji.scale));
             } else {
