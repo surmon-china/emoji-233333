@@ -1,5 +1,5 @@
 
-class Emoji233333 {
+export class Emoji233333 {
 
   // constructor
   constructor(options) {
@@ -246,5 +246,4 @@ class Emoji233333 {
   }
 }
 
-window.Emoji233333 = Emoji233333
-module.exports = Emoji233333
+export default Emoji233333

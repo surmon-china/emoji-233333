@@ -1,17 +1,21 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(['module'], factory);
+    define(['exports'], factory);
   } else if (typeof exports !== "undefined") {
-    factory(module);
+    factory(exports);
   } else {
     var mod = {
       exports: {}
     };
-    factory(mod);
-    global._ = mod.exports;
+    factory(mod.exports);
+    global.Emoji233333 = mod.exports;
   }
-})(this, function (module) {
+})(this, function (exports) {
   'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -37,7 +41,7 @@
     };
   }();
 
-  var Emoji233333 = function () {
+  var Emoji233333 = exports.Emoji233333 = function () {
 
     // constructor
     function Emoji233333(options) {
@@ -77,6 +81,9 @@
           return callback(img);
         };
       }
+
+      // 启动动画
+
     }, {
       key: 'initialize',
       value: function initialize() {
@@ -108,6 +115,9 @@
         // 生成随机表情矩阵
         this.createEmojis();
       }
+
+      // 生成表情矩阵
+
     }, {
       key: 'createEmojis',
       value: function createEmojis() {
@@ -159,6 +169,9 @@
           }
         });
       }
+
+      // 发射帧
+
     }, {
       key: 'drawStep',
       value: function drawStep() {
@@ -225,6 +238,9 @@
           window.cancelAnimationFrame(this.repeater);
         }
       }
+
+      // 创建缓存
+
     }, {
       key: 'createCacheCanvas',
       value: function createCacheCanvas() {
@@ -233,6 +249,9 @@
         this.cacheCanvas.height = this.canvas.height;
         this.cacheCanvasContext = this.cacheCanvas.getContext('2d');
       }
+
+      // 私有发射
+
     }, {
       key: '_launch',
       value: function _launch() {
@@ -240,6 +259,9 @@
         this.repeater = window.requestAnimationFrame(this._launch.bind(this));
         this.drawStep();
       }
+
+      // 发射拦截器
+
     }, {
       key: 'launch',
       value: function launch() {
@@ -251,11 +273,17 @@
           this._launch();
         }
       }
+
+      // 更新配置
+
     }, {
       key: 'update',
       value: function update(options) {
         this.options = Object.assign(this.options, options);
       }
+
+      // 获取窗口尺寸
+
     }, {
       key: 'windowSize',
       get: function get() {
@@ -264,11 +292,17 @@
           height: document.documentElement.clientHeight || document.body.clientHeight
         };
       }
+
+      // 获取画布比例
+
     }], [{
       key: 'getPixelRatio',
       value: function getPixelRatio(context) {
         return context.backingStorePixelRatio || context.webkitBackingStorePixelRatio || context.mozBackingStorePixelRatio || context.msBackingStorePixelRatio || context.oBackingStorePixelRatio || context.backingStorePixelRatio || 1;
       }
+
+      // 生成随机数
+
     }, {
       key: 'rand',
       value: function rand(num) {
@@ -278,9 +312,4 @@
 
     return Emoji233333;
   }();
-
-  window.Emoji233333 = Emoji233333;
-  module.exports = Emoji233333;
 });
-
-//# sourceMappingURL=233333.js.map
