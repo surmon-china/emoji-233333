@@ -62,7 +62,7 @@
         increaseSpeed: 0.08,
         emoji: this.defaultEmoji
       };
-      this.options = Object.assign({}, defaultOptions, options);
+      this.options = Object.assign({}, this.defaultOptions, options);
       this._speed = this.options.speed;
       this.initialize();
     }
