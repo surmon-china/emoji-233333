@@ -312,4 +312,6 @@
 
     return Emoji233333;
   }();
+
+  exports.default = Emoji233333;
 });
