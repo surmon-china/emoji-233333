@@ -13,14 +13,20 @@
 
 [Online Demo](https://surmon-china.github.io/emoji-233333/test/index.html)
 
-## install
+### CDN
 
 ```html
 <script type="text/javascript" src="../dist/233333.js"></script>
 ```
 
+### NPM
 
-## use
+```javascript
+import Emoji233333 from 'emoji-233333'
+```
+
+
+### use
 
 ```javascript
 // 实例化
