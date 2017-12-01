@@ -7,6 +7,12 @@
     "build": "babel ./src/233333.js --out-file ./dist/233333.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": {
+    "name": "Surmon",
+    "email": "surmon@foxmail.com",
+    "url": "http://surmon.me"
+  },
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/surmon-china/emoji-233333.git"
