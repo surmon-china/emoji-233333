@@ -1,11 +1,15 @@
-[![](https://badge.juejin.im/entry/599dc6da6fb9a0247b3b5c72/likes.svg?style=flat-square)](https://juejin.im/entry/599dc6da6fb9a0247b3b5c72/detail)
+[![GitHub stars](https://img.shields.io/github/stars/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/stargazers)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/issues)
 [![GitHub forks](https://img.shields.io/github/forks/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/network)
-[![GitHub stars](https://img.shields.io/github/stars/surmon-china/emoji-233333.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333/stargazers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/surmon-china/emoji-233333)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/surmon-china/emoji-233333.svg?style=flat-square)](https://twitter.com/intent/tweet?url=https://github.com/surmon-china/emoji-233333)
+[![](https://badge.juejin.im/entry/599dc6da6fb9a0247b3b5c72/likes.svg?style=flat-square)](https://juejin.im/entry/599dc6da6fb9a0247b3b5c72/detail)
 
 [![NPM](https://nodei.co/npm/emoji-233333.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/emoji-233333/)
 [![NPM](https://nodei.co/npm-dl/emoji-233333.png?months=9&height=3)](https://nodei.co/npm/emoji-233333/)
+
 
 # emoji-233333
 
@@ -13,20 +17,20 @@
 
 [Online Demo](https://surmon-china.github.io/emoji-233333/test/index.html)
 
-### CDN
+#### CDN
 
 ```html
 <script type="text/javascript" src="../dist/233333.js"></script>
 ```
 
-### NPM
+#### NPM
 
 ```javascript
 import Emoji233333 from 'emoji-233333'
 ```
 
 
-### use
+#### USE
 
 ```javascript
 // 实例化
