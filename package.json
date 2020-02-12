@@ -1,6 +1,6 @@
 {
   "name": "emoji-233333",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "233333",
   "main": "dist/233333.js",
   "scripts": {
@@ -21,7 +21,6 @@
     "233333",
     "emoji"
   ],
-  "author": "Surmon",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/surmon-china/emoji-233333/issues"
