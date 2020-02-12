@@ -28,13 +28,21 @@ export class Emoji233333 {
   }
 
   // 加载图片
-  preImage(url, callback) {
-    const img = new Image()
-    img.src = url
-    if (img.complete) {
-      return callback(img)
-    }
-    img.onload = () => callback(img)
+  preLoadImage(url) {
+    return new Promise((resolve, reject) => {
+      const img = new Image()
+      img.src = url
+      if (img.complete) {
+        resolve(img)
+        return
+      }
+      img.onload = () => {
+        resolve(img)
+      }
+      img.onerror = () => {
+        reject(img)
+      }
+    })
   }
 
   // 启动动画
@@ -73,11 +81,11 @@ export class Emoji233333 {
     // (容器尺寸 / 表情尺寸 / 密度 || 1) = count
     const { options, emojis } = this
     if (!options.emoji) {
-      throw new Error('缺少 emoji 表情，无法继续！')
+      return Promise.reject(new Error('未得到有效的 emoji 地址，无法继续！'))
     }
 
-    this.preImage(options.emoji, emj => {
-    	this.emojiImg = emj
+    return this.preLoadImage(options.emoji).then(emj => {
+      this.emojiImg = emj
       const cWidth = parseInt(this.canvas.style.width)
       const count = parseInt(cWidth / (emj.width * options.scale)) * options.density
       for (let i = 0; i < count; i++) {
@@ -107,7 +115,7 @@ export class Emoji233333 {
           } else if (emojiX > xWidthExtentS) {
             targetX = emojiX - (xWidthExtentS * 1.2 * Math.random())
           } else {
-          	let random = Math.random()
+            let random = Math.random()
             targetX = random < 0.5 ? xWidthExtentF * random : fullWidth * Math.random()
           }
           newEmoji.targetX = ~~ (0.5 + targetX)
@@ -218,21 +226,22 @@ export class Emoji233333 {
   launch() {
     if (this.kichikuing) {
       return false
-    } else {
+    }
+
+    this.createEmojis().then(() => {
       if (this.options.onStart) {
         this.options.onStart()
       }
-      this.createEmojis()
       this._speed = this.options.speed
       this._launch()
-    }
+    })
   }
 
   // 更新配置
   update(options) {
     if (options) {
       this.options = {
-        ...defaultOptions,
+        ...this.options,
         ...options
       }
     }

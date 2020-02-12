@@ -61,18 +61,25 @@
 
 
     _createClass(Emoji233333, [{
-      key: "preImage",
-      value: function preImage(url, callback) {
-        var img = new Image();
-        img.src = url;
+      key: "preLoadImage",
+      value: function preLoadImage(url) {
+        return new Promise(function (resolve, reject) {
+          var img = new Image();
+          img.src = url;
 
-        if (img.complete) {
-          return callback(img);
-        }
+          if (img.complete) {
+            resolve(img);
+            return;
+          }
 
-        img.onload = function () {
-          return callback(img);
-        };
+          img.onload = function () {
+            resolve(img);
+          };
+
+          img.onerror = function () {
+            reject(img);
+          };
+        });
       } // 启动动画
 
     }, {
@@ -113,10 +120,10 @@
             emojis = this.emojis;
 
         if (!options.emoji) {
-          throw new Error('缺少 emoji 表情，无法继续！');
+          return Promise.reject(new Error('未得到有效的 emoji 地址，无法继续！'));
         }
 
-        this.preImage(options.emoji, function (emj) {
+        return this.preLoadImage(options.emoji).then(function (emj) {
           _this.emojiImg = emj;
           var cWidth = parseInt(_this.canvas.style.width);
           var count = parseInt(cWidth / (emj.width * options.scale)) * options.density;
@@ -260,25 +267,28 @@
     }, {
       key: "launch",
       value: function launch() {
+        var _this2 = this;
+
         if (this.kichikuing) {
           return false;
-        } else {
-          if (this.options.onStart) {
-            this.options.onStart();
+        }
+
+        this.createEmojis().then(function () {
+          if (_this2.options.onStart) {
+            _this2.options.onStart();
           }
 
-          this.createEmojis();
-          this._speed = this.options.speed;
+          _this2._speed = _this2.options.speed;
 
-          this._launch();
-        }
+          _this2._launch();
+        });
       } // 更新配置
 
     }, {
       key: "update",
       value: function update(options) {
         if (options) {
-          this.options = _objectSpread({}, defaultOptions, {}, options);
+          this.options = _objectSpread({}, this.options, {}, options);
         }
       } // 获取窗口尺寸
 
