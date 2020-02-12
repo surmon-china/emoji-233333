@@ -1,9 +1,4 @@
 {
-  "presets": ["es2015"],
-  "plugins": [
-    "transform-es2015-modules-umd",
-    [ "rename-umd-globals", {
-      "_": "Emoji233333"
-    }]
-  ]
+  "presets": ["@babel/env"],
+  "plugins": ["@babel/plugin-transform-modules-umd"]
 }

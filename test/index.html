@@ -111,12 +111,14 @@
                onchange="onOptionChanged('cache', this.checked)"/>
       </h4>
       <h4>表情图片地址</h4>
-  		<input id="J_emoji"
-             class="emoji" 
-             type="text" 
-             placeholder="base图片: url / base64" 
-             value=""
-             onchange="onOptionChanged('emoji', this.value)">
+      <input
+        id="J_emoji"
+        class="emoji" 
+        type="text" 
+        placeholder="base图片: url / base64" 
+        value=""
+        onchange="onOptionChanged('emoji', this.value)"
+      >
       <br>
       <div class="buttons">
         <button onclick="updateOptions()">更新配置</button>
@@ -164,7 +166,14 @@
       // 是否启用交错效果
       staggered: true,
       // 是否启用缓存
-      cache: true
+      cache: true,
+      emoji: './233.png',
+      onStart() {
+        console.log('Start!')
+      },
+      onEnded() {
+        console.log('Done!')
+      }
     }
   	var emoji233333 = new Emoji233333(options)
     function luanch() {

@@ -1,4 +1,15 @@
 
+const defaultOptions = {
+  cache: true,
+  base: 'emoji',
+  scale: 0.5,
+  speed: 10,
+  density: 3,
+  staggered: true,
+  increaseSpeed: 0.08,
+  emoji: null
+}
+
 export class Emoji233333 {
 
   // constructor
@@ -7,17 +18,10 @@ export class Emoji233333 {
     this.kichikuing = false
     this.repeater = null
     this.emojiImg = null
-    this.defaultOptions = {
-      cache: true,
-      base: 'emoji',
-      scale: 0.5,
-      speed: 10,
-      density: 3,
-      staggered: true,
-      increaseSpeed: 0.08,
-      emoji: null
+    this.options = {
+      ...defaultOptions,
+      ...options
     }
-    this.options = Object.assign({}, this.defaultOptions, options)
     this._speed = this.options.speed
 
     this.initialize()
@@ -67,8 +71,7 @@ export class Emoji233333 {
   // 生成表情矩阵
   createEmojis() {
     // (容器尺寸 / 表情尺寸 / 密度 || 1) = count
-    this.emojis = []
-    const options = this.options
+    const { options, emojis } = this
     if (!options.emoji) {
       throw new Error('缺少 emoji 表情，无法继续！')
     }
@@ -110,14 +113,14 @@ export class Emoji233333 {
           newEmoji.targetX = ~~ (0.5 + targetX)
         }
         // console.log(newEmoji)
-        this.emojis.push(newEmoji)
+        emojis.push(newEmoji)
       }
     })
   }
 
   // 发射帧
   drawStep() {
-    // console.log('开始帧')
+    // console.log('drawStep', this.emojis)
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
     let nextGoOn = false
     const targetY = this.canvas.height
@@ -190,6 +193,9 @@ export class Emoji233333 {
       // console.log('整体释放')
       this.kichikuing = false
       window.cancelAnimationFrame(this.repeater)
+      if (this.options.onEnded) {
+        this.options.onEnded()
+      }
     }
   }
 
@@ -213,18 +219,22 @@ export class Emoji233333 {
     if (this.kichikuing) {
       return false
     } else {
-      this._speed = this.options.speed
+      if (this.options.onStart) {
+        this.options.onStart()
+      }
       this.createEmojis()
+      this._speed = this.options.speed
       this._launch()
     }
   }
 
   // 更新配置
   update(options) {
-    if (!options) {
-      this.options = Object.assign({}, this.defaultOptions)
-    } else {
-      this.options = Object.assign(this.options, options)
+    if (options) {
+      this.options = {
+        ...defaultOptions,
+        ...options
+      }
     }
   }
 
@@ -252,6 +262,10 @@ export class Emoji233333 {
   static rand(num) {
     return Math.floor(Math.random() * num + 1)
   }
+}
+
+if (typeof window !== undefined) {
+  window.Emoji233333 = Emoji233333
 }
 
 export default Emoji233333
