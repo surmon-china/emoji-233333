@@ -68,3 +68,7 @@ emoji233333.launch()
 // 更新配置
 emoji233333.update(newOptions)
 ```
+
+### License
+
+[MIT](https://github.com/surmon-china/emoji-233333/blob/master/LICENSE)
