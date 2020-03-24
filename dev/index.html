@@ -10,24 +10,24 @@
     <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <title>emoji-233333</title>
     <style>
-    	body {
-    		margin: 0;
-    		padding: 0;
-    	}
-    	canvas {
-    		z-index: -1;
-    		top: 0;
-    		left: 0;
-    		width: 800px;
-    		height: 800px;
-    		position: fixed;
-    	}
-    	.options {
-    		width: 100%;
-    		margin: 0 auto;
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 800px;
+        height: 800px;
+        position: fixed;
+      }
+      .options {
+        width: 100%;
+        margin: 0 auto;
         margin-top: 5rem;
-    		text-align: center;
-    	}
+        text-align: center;
+      }
       .emoji {
         padding: .5rem;
         width: 20rem;
@@ -49,73 +49,77 @@
         background-color: #aaa;
       }
     </style>
-    <script type="text/javascript" src="../dist/233333.js"></script>
+    <script type="text/javascript" src="../dist/emoji-233333.js"></script>
   </head>
   <body>
-  	<canvas id="emoji"></canvas>
-  	<div class="options">
-<!--       <h4>分辨率</h4>
-      <input id="ratio" 
-             type="range" 
-             min="0.1" 
-             max="2" 
-             step="0.1" 
-             value="1"
-             onchange="onOptionChanged('ratio', this.value)"/> -->
+    <canvas id="emoji"></canvas>
+    <div class="options">
       <h4>表情缩放程度</h4>
-      <input id="scale" 
-             type="range" 
-             min="0.1" 
-             max="2" 
-             step="0.1" 
-             value="0.7" 
-             onchange="onOptionChanged('scale', this.value)"/>
+      <input
+        id="scale"
+        type="range"
+        min="0.1"
+        max="2"
+        step="0.1"
+        value="0.7"
+        onchange="onOptionChanged('scale', this.value)"
+      />
       <h4>动画速度</h4>
-      <input id="speed" 
-             type="range" 
-             min="1" 
-             max="100" 
-             step="1" 
-             value="14"
-             onchange="onOptionChanged('speed', this.value)"/>
+      <input
+        id="speed"
+        type="range"
+        min="1"
+        max="100"
+        step="1"
+        value="14"
+        onchange="onOptionChanged('speed', this.value)"
+      />
       <h4>动画递增速度</h4>
-      <input id="increaseSpeed" 
-             type="range" 
-             min="0" 
-             max="3" 
-             step="0.01" 
-             value="0.4"
-             onchange="onOptionChanged('increaseSpeed', this.value)"/>
+      <input
+        id="increaseSpeed"
+        type="range"
+        min="0"
+        max="3"
+        step="0.01"
+        value="0.4"
+        onchange="onOptionChanged('increaseSpeed', this.value)"
+      />
       <h4>表情密度</h4>
-      <input id="density" 
-             type="range" 
-             min="1" 
-             max="30" 
-             step="1" 
-             value="6"
-             onchange="onOptionChanged('density', this.value)"/>
+      <input
+        id="density"
+        type="range"
+        min="1"
+        max="30"
+        step="1"
+        value="6"
+        onchange="onOptionChanged('density', this.value)"
+      />
       <h4>
         <span>是否启用交错效果</span>
-        <input id="staggered" 
-               type="checkbox" 
-               name="vehicle" 
-               checked="checked"
-               onchange="onOptionChanged('staggered', this.checked)"/>
+        <input
+          id="staggered"
+          type="checkbox"
+          name="vehicle"
+          checked="checked"
+          onchange="onOptionChanged('staggered', this.checked)"
+        />
       </h4>
       <h4>
         <span>是否启用内置缓冲区</span>
-        <input id="cache" 
-               type="checkbox" 
-               name="cache" 
-               checked="checked"
-               onchange="onOptionChanged('cache', this.checked)"/>
+        <input
+          id="cache"
+          type="checkbox"
+          name="cache"
+          checked="checked"
+          onchange="onOptionChanged('cache', this.checked)"
+        />
       </h4>
       <h4>表情图片地址</h4>
       <input
         id="J_emoji"
-        class="emoji" 
-        type="text" 
-        placeholder="base图片: url / base64" 
+        class="emoji"
+        type="text"
+        placeholder="base图片: url / base64"
         value=""
         onchange="onOptionChanged('emoji', this.value)"
       >
@@ -128,10 +132,9 @@
       <h4>
         <a href="https://github.com/surmon-china/emoji-233333">Go to Github</a>
       </h4>
-  	</div>
+    </div>
   </body>
   <script>
-    window.Emoji233333 = window.Emoji233333.Emoji233333 || window.Emoji233333
     // 文件下载
     function fakeClick(obj) {
       var ev = document.createEvent("MouseEvents");
@@ -175,7 +178,7 @@
         console.log('Done!')
       }
     }
-  	var emoji233333 = new Emoji233333(options)
+    var emoji233333 = new window.Emoji233333(options)
     function luanch() {
       emoji233333.launch()
     }
@@ -198,7 +201,7 @@
     function exportOptions() {
       exportRaw('options.json', JSON.stringify(options))
     }
-  	setTimeout(emoji233333.launch.bind(emoji233333), 0)
-  	console.log(emoji233333)
+    setTimeout(emoji233333.launch.bind(emoji233333), 0)
+    console.log(emoji233333)
   </script>
 </html>

@@ -1,5 +1,5 @@
 
-const defaultOptions = {
+const DEFAULT_OPTIONS = Object.freeze({
   cache: true,
   base: 'emoji',
   scale: 0.5,
@@ -8,18 +8,17 @@ const defaultOptions = {
   staggered: true,
   increaseSpeed: 0.08,
   emoji: null
-}
+})
 
-export class Emoji233333 {
+export default class Emoji233333 {
 
-  // constructor
   constructor(options) {
     this.emojis = []
     this.kichikuing = false
     this.repeater = null
     this.emojiImg = null
     this.options = {
-      ...defaultOptions,
+      ...DEFAULT_OPTIONS,
       ...options
     }
     this._speed = this.options.speed
@@ -263,7 +262,8 @@ export class Emoji233333 {
       context.mozBackingStorePixelRatio ||
       context.msBackingStorePixelRatio ||
       context.oBackingStorePixelRatio ||
-      context.backingStorePixelRatio || 1
+      context.backingStorePixelRatio ||
+      1
     )
   }
 
@@ -272,9 +272,3 @@ export class Emoji233333 {
     return Math.floor(Math.random() * num + 1)
   }
 }
-
-if (typeof window !== undefined) {
-  window.Emoji233333 = Emoji233333
-}
-
-export default Emoji233333

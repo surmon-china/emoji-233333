@@ -2,24 +2,39 @@
   "name": "emoji-233333",
   "version": "0.3.0",
   "description": "233333",
-  "main": "dist/233333.js",
+  "keywords": [
+    "emoji canvas",
+    "emoji rain",
+    "233333",
+    "emoji",
+    "表情雨"
+  ],
   "scripts": {
-    "build": "babel ./src/233333.js --out-file ./dist/233333.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist/* && abc build",
+    "dev": "open ./dev/index.html"
   },
   "author": {
     "name": "Surmon",
-    "email": "surmon@foxmail.com",
-    "url": "https://surmon.me"
+    "url": "https://github.com/surmon-china"
   },
   "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/surmon-china/emoji-233333.git"
   },
-  "keywords": [
-    "233333",
-    "emoji"
+  "main": "dist/emoji-233333.js",
+  "module": "dist/emoji-233333.esm.js",
+  "browser": "dist/emoji-233333.js",
+  "jsdelivr": "dist/emoji-233333.js",
+  "unpkg": "dist/emoji-233333.js",
+  "jspm": {
+    "main": "dist/emoji-233333.esm.js",
+    "registry": "npm",
+    "format": "esm"
+  },
+  "files": [
+    "src",
+    "dist/*.js"
   ],
   "license": "MIT",
   "bugs": {
@@ -27,9 +42,7 @@
   },
   "homepage": "https://github.com/surmon-china/emoji-233333#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/plugin-transform-modules-umd": "^7.8.3",
-    "@babel/preset-env": "^7.8.4"
+    "@surmon-china/abc-factory": "^0.3.0",
+    "open": "^7.0.3"
   }
 }
