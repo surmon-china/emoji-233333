@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://github.com/surmon-china/emoji-233333" target="_blank">
-    <img width="66px" src="https://raw.githubusercontent.com/surmon-china/emoji-233333/master/dev/233.png" />
+    <img width="66px" src="https://raw.githubusercontent.com/surmon-china/emoji-233333/master/dev/666.png" />
   </a>
 </p>
 
@@ -12,10 +12,8 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/surmon-china/emoji-233333.svg?style=for-the-badge)](https://github.com/surmon-china/emoji-233333)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/emoji-233333/blob/master/LICENSE)
 
+**[😂 2333333.](https://surmon-china.github.io/emoji-233333/dev)**
 
-**😂 2333333.**
-
-[Online Demo](https://surmon-china.github.io/emoji-233333/dev)
 
 **CDN**
 
