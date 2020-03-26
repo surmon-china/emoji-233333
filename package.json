@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/surmon-china/emoji-233333#readme",
   "devDependencies": {
-    "@surmon-china/abc-factory": "^0.3.0",
+    "@surmon-china/abc-factory": "^0.3.2",
     "open": "^7.0.3"
   }
 }
