@@ -1,5 +1,5 @@
 /**
- * @file emoji-233333 v0.3.0
+ * @file emoji-233333 v0.3.2
  * @copyright Copyright (c) Surmon. All rights reserved.
  * @license Released under the MIT License.
  * @author Surmon <https://github.com/surmon-china>

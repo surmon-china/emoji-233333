@@ -49,7 +49,6 @@
         background-color: #aaa;
       }
     </style>
-    <script type="text/javascript" src="../dist/emoji-233333.js"></script>
   </head>
   <body>
     <canvas id="emoji"></canvas>
@@ -130,30 +129,34 @@
         <button onclick="luanch()">来一发</button>
       </div>
       <h4>
-        <a href="https://github.com/surmon-china/emoji-233333">Go to Github</a>
+        <a href="https://github.com/surmon-china/emoji-233333" target="_blank">Go to GitHub</a>
       </h4>
     </div>
   </body>
-  <script>
+  <script type="module" crossorigin="anonymous">
+    import Emoji233333 from '../src/index.js';
+
     // 文件下载
     function fakeClick(obj) {
-      var ev = document.createEvent("MouseEvents");
+      const ev = document.createEvent("MouseEvents");
       ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
       obj.dispatchEvent(ev);
     }
+
     function exportRaw(name, data) {
-      var urlObject = window.URL || window.webkitURL || window;
-      var export_blob = new Blob([data]);
-      var save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+      const urlObject = window.URL || window.webkitURL || window;
+      const export_blob = new Blob([data]);
+      const save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
       save_link.href = urlObject.createObjectURL(export_blob);
       save_link.download = name;
       fakeClick(save_link);
     }
+
     // 初始化
-    var emoji = document.getElementById('emoji')
+    const emoji = document.getElementById('emoji')
     emoji.width = document.documentElement.clientWidth || document.body.clientWidth
     emoji.height = document.documentElement.clientHeight || document.body.clientHeight
-    var options = {
+    const options = {
       // 文档：DOM / String
       base: 'emoji',
       // 显示器分辨率：默认不指定自动分析
@@ -178,11 +181,14 @@
         console.log('Done!')
       }
     }
-    var emoji233333 = new window.Emoji233333(options)
-    function luanch() {
+
+    const emoji233333 = new Emoji233333(options)
+
+    window.luanch = () => {
       emoji233333.launch()
     }
-    function updateOptions() {
+
+    window.updateOptions = () => {
       var emoji = document.getElementById('J_emoji')
       if (emoji.value) {
         options.emoji = emoji.value
@@ -190,7 +196,8 @@
       console.log('updateOptions', options)
       emoji233333.update(options)
     }
-    function onOptionChanged(key, value) {
+
+    window.onOptionChanged = (key, value) => {
       if (!['staggered', 'cache', 'emoji'].includes(key)) {
         value = Number(value)
       }
@@ -198,9 +205,11 @@
       console.log('onOptionChanged', key, value, options)
       updateOptions()
     }
-    function exportOptions() {
+
+    window.exportOptions = () => {
       exportRaw('options.json', JSON.stringify(options))
     }
+
     setTimeout(emoji233333.launch.bind(emoji233333), 0)
     console.log(emoji233333)
   </script>

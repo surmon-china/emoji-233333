@@ -1,6 +1,6 @@
 {
   "name": "emoji-233333",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "233333",
   "keywords": [
     "emoji canvas",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "rm -rf ./dist/* && abc build",
-    "dev": "open ./dev/index.html"
+    "dev": "http-server ./ -d -l -o /dev"
   },
   "author": {
     "name": "Surmon",

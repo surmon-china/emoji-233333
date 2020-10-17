@@ -1,4 +1,3 @@
-
 const DEFAULT_OPTIONS = Object.freeze({
   cache: true,
   base: 'emoji',
@@ -11,7 +10,6 @@ const DEFAULT_OPTIONS = Object.freeze({
 })
 
 export default class Emoji233333 {
-
   constructor(options) {
     this.emojis = []
     this.kichikuing = false
