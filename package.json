@@ -2,25 +2,25 @@
   "name": "emoji-233333",
   "version": "0.3.2",
   "description": "233333",
+  "private": false,
+  "license": "MIT",
   "keywords": [
     "emoji canvas",
     "emoji rain",
     "233333",
-    "emoji",
-    "表情雨"
+    "emoji"
   ],
-  "scripts": {
-    "build": "rm -rf ./dist/* && abc build",
-    "dev": "http-server ./ -d -l -o /dev"
-  },
   "author": {
     "name": "Surmon",
     "url": "https://github.com/surmon-china"
   },
-  "private": false,
+  "bugs": {
+    "url": "https://github.com/surmon-china/emoji-233333/issues"
+  },
+  "homepage": "https://github.com/surmon-china/emoji-233333#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/surmon-china/emoji-233333.git"
+    "url": "https://github.com/surmon-china/surmon.me"
   },
   "main": "dist/emoji-233333.js",
   "module": "dist/emoji-233333.esm.js",
@@ -36,12 +36,11 @@
     "src",
     "dist/*.js"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/surmon-china/emoji-233333/issues"
+  "scripts": {
+    "build": "libundler",
+    "dev": "http-server ./ -d -l -o /dev"
   },
-  "homepage": "https://github.com/surmon-china/emoji-233333#readme",
   "devDependencies": {
-    "@surmon-china/abc-factory": "^0.3.2"
+    "@surmon-china/libundler": "^2.2.0"
   }
 }

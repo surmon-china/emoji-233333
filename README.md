@@ -1,33 +1,28 @@
 
 <p align="center">
-  <a href="https://github.com/surmon-china/emoji-233333" target="_blank">
-    <img width="66px" src="https://raw.githubusercontent.com/surmon-china/emoji-233333/master/dev/666.png" />
+  <a href="#" target="_blank">
+    <img width="66px" src="/dev/666.png" />
   </a>
 </p>
 
 # emoji-233333
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/emoji-233333.svg?style=for-the-badge)](https://github.com/surmon-china/emoji-233333/stargazers)
+&nbsp;
 [![npm](https://img.shields.io/npm/v/emoji-233333?color=%23c7343a&label=npm&style=for-the-badge)](https://www.npmjs.com/package/emoji-233333)
+&nbsp;
 [![GitHub issues](https://img.shields.io/github/issues-raw/surmon-china/emoji-233333.svg?style=for-the-badge)](https://github.com/surmon-china/emoji-233333/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/surmon-china/emoji-233333.svg?style=for-the-badge)](https://github.com/surmon-china/emoji-233333)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/emoji-233333/blob/master/LICENSE)
+&nbsp;
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](/LICENSE)
 
 **[😂 2333333.](https://surmon-china.github.io/emoji-233333/dev)**
 
 ---
 
-**CDN**
-
-```html
-<script type="text/javascript" src="../dist/emoji-233333.js"></script>
-```
-
-**npm**
+**NPM**
 
 ```javascript
 import Emoji233333 from 'emoji-233333'
 ```
-
 
 #### Usage
 
@@ -71,4 +66,4 @@ emoji233333.update(newOptions)
 
 ### License
 
-[MIT](https://github.com/surmon-china/emoji-233333/blob/master/LICENSE)
+[MIT](/LICENSE)
